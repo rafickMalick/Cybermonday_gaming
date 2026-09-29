@@ -40,7 +40,7 @@ export default function HomePage() {
               <span>FLASH DEAL DU JOUR</span><span>−{pctOff(hero.old, hero.price)} %</span>
             </div>
             <div className="relative aspect-video border-b-2 border-divider">
-              <ProductVisual code={hero.code} className="absolute inset-0" codeClass="text-[clamp(56px,9vw,104px)] neon-text" />
+              <ProductVisual code={hero.code} className="w-full h-full" codeClass="text-[clamp(56px,9vw,104px)] neon-text" />
               <span className="absolute left-3 bottom-2.5 text-[11px] tracking-[.1em] text-ink/55">VISUEL PRODUIT · {hero.cat.toUpperCase()}</span>
             </div>
             <div className="p-4 flex flex-col gap-3.5">

@@ -79,9 +79,9 @@ export const CATALOG: Product[] = RAW.map((p) => {
 });
 
 export const BY_ID: Record<string, Product> = Object.fromEntries(CATALOG.map((p) => [p.id, p]));
-/** Illustration produit (public/products/<id>.svg), retrouvée via le code affiché */
+/** Photo produit (public/products/<id>.jpg, Unsplash), retrouvée via le code affiché */
 const ID_BY_CODE: Record<string, string> = Object.fromEntries(CATALOG.map((p) => [p.code, p.id]));
-export const imageOfCode = (code: string): string => `/products/${ID_BY_CODE[code] ?? code}.svg`;
+export const imageOfCode = (code: string): string => `/products/${ID_BY_CODE[code] ?? code}.jpg`;
 export const getProduct = (id: string): Product | undefined => BY_ID[id];
 
 /** Accessoires proposés en « Complete Your Setup », par catégorie du produit principal */

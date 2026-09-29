@@ -17,20 +17,20 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-20 bg-bg/90 backdrop-blur-sm border-b-2 border-divider">
-      <div className="wrap py-3 flex flex-wrap items-center gap-4">
-        <Link href="/" className="flex items-baseline gap-1.5 mr-auto" aria-label="OVRCLK //GEAR — accueil">
+      <div className="wrap py-3 flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
+        <Link href="/" className="flex items-baseline gap-1.5 mr-auto min-w-0 shrink" aria-label="OVRCLK //GEAR — accueil">
           <Logo glow />
           <span className="text-[10px] tracking-[.14em] text-ink/60">{"//GEAR"}</span>
         </Link>
-        <button onClick={openDrawer} className="btn btn-secondary min-h-[44px] gap-2.5" aria-label={`Ouvrir le panier, ${count} article${count > 1 ? 's' : ''}`}>
+        <button onClick={openDrawer} className="btn btn-secondary min-h-[44px] gap-2 sm:gap-2.5 !px-3 sm:!px-5 shrink-0" aria-label={`Ouvrir le panier, ${count} article${count > 1 ? 's' : ''}`}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" />
             <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
           </svg>
-          Panier
+          <span className="max-[359px]:hidden">Panier</span>
           <span key={pulse} className={`inline-block bg-accent text-bg min-w-[22px] px-1.5 py-0.5 text-xs text-center ${pulse ? 'animate-bump' : ''}`}>{count}</span>
         </button>
-        <nav className="basis-full flex gap-1 overflow-x-auto no-scrollbar whitespace-nowrap -mx-2" aria-label="Catégories">
+        <nav className="basis-full flex gap-1 overflow-x-auto no-scrollbar whitespace-nowrap -mx-2 pr-8 [mask-image:linear-gradient(to_right,#000_calc(100%-32px),transparent)] md:[mask-image:none]" aria-label="Catégories">
           {NAV_LINKS.map((n) => {
             const active = pathname === '/deals' && cat === n.cat;
             return (
